@@ -8,7 +8,7 @@ fpsClock::fpsClock( int skipTime_ ) {
 
 bool fpsClock::tick() {
     presentTime = clock.getElapsedTime();
-    if( presentTime.asMilliseconds() >= prevTime.asMilliseconds() + skipTime.asMilliseconds() ) {
+    if( presentTime >= prevTime + skipTime ) {
         prevTime = presentTime;
         return true;
     } else
